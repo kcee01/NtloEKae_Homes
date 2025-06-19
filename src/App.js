@@ -7,6 +7,7 @@ import LandlordProfile from "./pages/LandlordProfile";
 import ListingsPage from "./pages/ListingsPages";
 import MyListingsPage from "./pages/MyListingsPage";
 import CreateListingPage from "./pages/CreateListingPage";
+import ApplyPage from "./pages/ApplyPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/listings" element={<ListingsPage />} />
           <Route path="/my-listings" element={<MyListingsPage />} />
           <Route path="/create-listing" element={<CreateListingPage />} />
+          <Route path="/apply" element={<ApplyPage />} />
           <Route path="/" element={<HomePage />} />
         </Routes>
       </div>
