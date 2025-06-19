@@ -1,23 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
-
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+      <div className="bg-white p-10 rounded-xl shadow-lg text-center">
+        <h1 className="text-3xl font-bold text-gray-800 mb-4">Tailwind CSS is working! 🎉</h1>
+        <button className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+          Test Button
+        </button>
+      </div>
     </div>
   );
 }
