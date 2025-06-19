@@ -1,13 +1,21 @@
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-      <div className="bg-white p-10 rounded-xl shadow-lg text-center">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">Tailwind CSS is working! 🎉</h1>
-        <button className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
-          Test Button
-        </button>
+    <Router>
+      <div className="min-h-screen bg-gray-100 p-6">
+        <nav className="mb-6 text-center">
+          <Link to="/login" className="text-blue-600 mx-3">Login</Link>
+          <Link to="/register" className="text-blue-600 mx-3">Register</Link>
+        </nav>
+        <Routes>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
 
