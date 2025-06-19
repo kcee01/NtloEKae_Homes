@@ -22,6 +22,7 @@ function App() {
           <Route path="/my-listings" element={<MyListingsPage />} />
           <Route path="/create-listing" element={<CreateListingPage />} />
           <Route path="/apply" element={<ApplyPage />} />
+          {/* Default route to HomePage */}
           <Route path="/" element={<HomePage />} />
         </Routes>
       </div>
