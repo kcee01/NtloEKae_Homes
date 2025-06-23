@@ -1,19 +1,32 @@
-// src/components/AuthForm.jsx
 import { useState } from "react";
 
 export default function AuthForm({ onSubmit, type }) {
-  const [form, setForm] = useState({ username: "", password: "", email: "", role: "tenant" });
+  const [form, setForm] = useState({
+    name: "",
+    surname: "",
+    username: "",
+    email: "",
+    role: "tenant",
+    password: "",
+    confirmPassword: "",
+  });
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (type === "register" && form.password !== form.confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+    onSubmit(form);
+  };
+
   return (
     <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        onSubmit(form);
-      }}
+      onSubmit={handleSubmit}
       className="max-w-md mx-auto bg-white p-6 rounded-2xl shadow-lg"
     >
       <h2 className="text-2xl font-semibold mb-4 text-center">
@@ -22,6 +35,24 @@ export default function AuthForm({ onSubmit, type }) {
 
       {type === "register" && (
         <>
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            value={form.name}
+            onChange={handleChange}
+            className="w-full mb-3 px-4 py-2 border rounded"
+            required
+          />
+          <input
+            type="text"
+            name="surname"
+            placeholder="Surname"
+            value={form.surname}
+            onChange={handleChange}
+            className="w-full mb-3 px-4 py-2 border rounded"
+            required
+          />
           <input
             type="email"
             name="email"
@@ -59,9 +90,21 @@ export default function AuthForm({ onSubmit, type }) {
         placeholder="Password"
         value={form.password}
         onChange={handleChange}
-        className="w-full mb-4 px-4 py-2 border rounded"
+        className="w-full mb-3 px-4 py-2 border rounded"
         required
       />
+
+      {type === "register" && (
+        <input
+          type="password"
+          name="confirmPassword"
+          placeholder="Confirm Password"
+          value={form.confirmPassword}
+          onChange={handleChange}
+          className="w-full mb-4 px-4 py-2 border rounded"
+          required
+        />
+      )}
 
       <button
         type="submit"
