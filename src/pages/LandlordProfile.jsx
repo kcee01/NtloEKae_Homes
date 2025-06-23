@@ -32,13 +32,27 @@ export default function LandlordProfile() {
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-2xl font-semibold">My Listings</h2>
             <Link
-              to="/new-listing"
+              to="/create-listing"
               className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
             >
               + Add New Listing
             </Link>
-          </div>
 
+            <Link
+              to="/listings"
+              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            >
+              + Show All My Listings
+            </Link>
+
+            <Link
+              to="/my-listings"
+              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            >
+              + Browse Listings
+            </Link>
+          </div>
+          
           {listings.length === 0 ? (
             <p className="text-gray-500">You have no listings yet.</p>
           ) : (

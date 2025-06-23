@@ -5,10 +5,6 @@ const ListingsPage = () => {
   const [previewUrls, setPreviewUrls] = useState([]);
   const [listing, setListing] = useState(null);
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-
   // Handle image selection
   const handleImageUpload = (e) => {
     const files = Array.from(e.target.files);
@@ -25,29 +21,6 @@ const ListingsPage = () => {
       description: 'This is a sample home listing.',
       images: previewUrls
     });
-  };
-
-  // Handle tenant application submission
-  const handleApplicationSubmit = (e) => {
-    e.preventDefault();
-    const application = { name, email, message };
-    console.log('Tenant Application Submitted:', application);
-
-    fetch('/api/applications', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(application)
-    })
-      .then(() => {
-        alert('Application submitted successfully!');
-        setName('');
-        setEmail('');
-        setMessage('');
-      })
-      .catch(err => {
-        console.error(err);
-        alert('Submission failed.');
-      });
   };
 
   return (
@@ -92,42 +65,7 @@ const ListingsPage = () => {
         </div>
       )}
 
-      {/* Tenant Application Form */}
-      <div className="bg-white shadow-md rounded-xl p-6 space-y-4">
-        <h2 className="text-2xl font-semibold text-gray-800">Apply as Tenant</h2>
-        <form onSubmit={handleApplicationSubmit} className="space-y-4">
-          <input
-            type="text"
-            placeholder="Full Name"
-            value={name}
-            onChange={e => setName(e.target.value)}
-            required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <textarea
-            placeholder="Why are you a good fit?"
-            value={message}
-            onChange={e => setMessage(e.target.value)}
-            rows={5}
-            required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <button
-            type="submit"
-            className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
-          >
-            Submit Application
-          </button>
-        </form>
-      </div>
+
     </div>
   );
 };

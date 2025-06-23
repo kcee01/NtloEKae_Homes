@@ -5,8 +5,8 @@ import RegisterPage from "./pages/RegisterPage";
 import TenantProfile from "./pages/TenantProfile";
 import LandlordProfile from "./pages/LandlordProfile";
 import ListingsPage from "./pages/ListingsPages";
-import MyListingsPage from "./pages/MyListingsPage";
-import CreateListingPage from "./pages/CreateListingPage";
+import MyListingsPage from "./pages/BrowsingPage";
+import CreateListingPage from "./pages/CreateListingPage";  
 import ApplyPage from "./pages/ApplyPage";
 
 function App() {

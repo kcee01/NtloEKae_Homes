@@ -10,25 +10,21 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <h1 className="text-xl font-bold text-blue-600">NtloEKae Homes</h1>
           <div className="space-x-4">
-            <a href="/" className="text-gray-700 hover:text-blue-600">
+            <a href="/" className="text-blue-600 border px-3 py-1 rounded border-blue-600 hover:bg-blue-50">
               Home
             </a>
-            <a href="/browse" className="text-gray-700 hover:text-blue-600">
-              Browse
+
+            <a href="/my-listings" className="text-blue-600 border px-3 py-1 rounded border-blue-600 hover:bg-blue-50">
+              Browse Rentals
             </a>
-            <a href="/listings" className="text-gray-700 hover:text-blue-600">
-              My Listings
+
+            <a href="/register" className="text-blue-600 border px-3 py-1 rounded border-blue-600 hover:bg-blue-50">
+              Register
             </a>
+
             <a href="/login" className="text-blue-600 border px-3 py-1 rounded border-blue-600 hover:bg-blue-50">
               Login
             </a>
-        <nav className="mb-6 text-center">
-            <Link to="/login" className="text-blue-600 mx-3">Login</Link>
-            <Link to="/register" className="text-blue-600 mx-3">Register</Link>
-            <Link to="/listings" className="text-blue-600">Browse Rentals</Link>
-            <Link to="/my-listings" className="text-blue-600">My Listings</Link>
-            <Link to="/create-listing" className="text-blue-600">New Listing</Link>
-        </nav>
           </div>
         </div>
       </nav>
@@ -45,7 +41,7 @@ export default function HomePage() {
           </p>
           <div className="flex justify-center gap-4">
             <a
-              href="/browse"
+              href="/my-listings"
               className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition"
             >
               Browse Rentals
