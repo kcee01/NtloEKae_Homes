@@ -8,7 +8,11 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold text-blue-600">NtloEKae Homes</h1>
+        <div className="flex items-center">
+          <Link to="/" className="text-xl font-bold text-blue-600 hover:text-blue-800">
+            NtloEKae Homes
+          </Link>
+        </div>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden text-blue-600 text-2xl focus:outline-none"
@@ -30,7 +34,8 @@ const Navbar = () => {
           <Link to="/login" className="block text-blue-600 border px-3 py-2 rounded border-blue-600 hover:bg-blue-50">Login</Link>
         </div>
       )}
-    </nav>
+  </nav>
+
   );
 };
 
