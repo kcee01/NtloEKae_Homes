@@ -36,7 +36,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10 px-4 flex flex-col items-center">
+    <div className="min-h-screen bg-gray-50 py-10 px-4 flex flex-col items-center">
       {/* Toggle Login/Register with blinking button */}
       <div className="flex gap-4 mb-6">
         {isLogin ? (

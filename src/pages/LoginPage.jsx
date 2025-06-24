@@ -3,7 +3,7 @@ import AuthForm from "../components/AuthForm";
 import { ArrowLeft } from "lucide-react";
 
 export default function RegisterPage() {
-  const [isLogin, setIsLogin] = useState(false);  // Initially set to false for Register
+  const [isLogin, setIsLogin] = useState(true);  // Initially set to false for Register
   const [showMessage, setShowMessage] = useState(false);
   const [showHomeButton, setShowHomeButton] = useState(false);
   const [blink, setBlink] = useState(true);
@@ -36,7 +36,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10 px-4 flex flex-col items-center">
+    <div className="min-h-screen bg-gray-50 py-10 px-4 flex flex-col items-center">
       {/* Toggle Login/Register with blinking button */}
       <div className="flex gap-4 mb-6">
         {isLogin ? (

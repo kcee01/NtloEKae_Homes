@@ -8,22 +8,57 @@ import ListingsPage from "./pages/ListingsPages";
 import MyListingsPage from "./pages/BrowsingPage";
 import CreateListingPage from "./pages/CreateListingPage";  
 import ApplyPage from "./pages/ApplyPage";
+import LayoutWithNavbar from "./components/LayoutWithNavbar";
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen bg-gray-100 p-6">
+
         <Routes>
+          {/*included the navbar to naviagte*/}
+          <Route
+                  path="/"
+                  element={
+                    <LayoutWithNavbar>
+                      <HomePage />
+                    </LayoutWithNavbar>}/>
+
+          <Route path="/tenant" 
+                 element={<LayoutWithNavbar>
+                            <TenantProfile />
+                            </LayoutWithNavbar>} />  
+
+          <Route path="/landlord" 
+                  element={<LayoutWithNavbar>
+                            <LandlordProfile />
+                            </LayoutWithNavbar>} />
+          <Route path="/listings" 
+                        element={<LayoutWithNavbar>
+                              <ListingsPage />
+                              </LayoutWithNavbar>} />
+
+          <Route path="/create-listing"
+                      element={<LayoutWithNavbar>
+                                <CreateListingPage />
+                                </LayoutWithNavbar>} />
+          <Route path="/apply" 
+                      element={<LayoutWithNavbar>
+                                <ApplyPage />
+                                </LayoutWithNavbar>} />
+<Route path="/my-listings" 
+              element={<LayoutWithNavbar>
+                        <MyListingsPage />
+                        </LayoutWithNavbar>} />
+
+          {/*excluded the navbar uses addons buttons to naviagte*/}
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/tenant" element={<TenantProfile />} />
-          <Route path="/landlord" element={<LandlordProfile />} />
-          <Route path="/listings" element={<ListingsPage />} />
-          <Route path="/my-listings" element={<MyListingsPage />} />
-          <Route path="/create-listing" element={<CreateListingPage />} />
-          <Route path="/apply" element={<ApplyPage />} />
-          {/* Default route to HomePage */}
-          <Route path="/" element={<HomePage />} />
+          <Route path="/register" element={<RegisterPage />} />        
+          
+          
+          
+          
+          
         </Routes>
       </div>
     </Router>

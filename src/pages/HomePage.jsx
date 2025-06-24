@@ -116,32 +116,6 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Navbar */}
-      <nav className="bg-white shadow">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold text-blue-600">NtloEKae Homes</h1>
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden text-blue-600 text-2xl focus:outline-none"
-          >
-            ☰
-          </button>
-          <div className="hidden md:flex space-x-4">
-            <a href="/" className="text-blue-600 border px-3 py-1 rounded border-blue-600 hover:bg-blue-50">Home</a>
-            <a href="/my-listings" className="text-blue-600 border px-3 py-1 rounded border-blue-600 hover:bg-blue-50">Browse Rentals</a>
-            <a href="/register" className="text-blue-600 border px-3 py-1 rounded border-blue-600 hover:bg-blue-50">Register</a>
-            <a href="/login" className="text-blue-600 border px-3 py-1 rounded border-blue-600 hover:bg-blue-50">Login</a>
-          </div>
-        </div>
-        {menuOpen && (
-          <div className="md:hidden px-6 pb-4 space-y-2">
-            <a href="/" className="block text-blue-600 border px-3 py-2 rounded border-blue-600 hover:bg-blue-50">Home</a>
-            <a href="/my-listings" className="block text-blue-600 border px-3 py-2 rounded border-blue-600 hover:bg-blue-50">Browse Rentals</a>
-            <a href="/register" className="block text-blue-600 border px-3 py-2 rounded border-blue-600 hover:bg-blue-50">Register</a>
-            <a href="/login" className="block text-blue-600 border px-3 py-2 rounded border-blue-600 hover:bg-blue-50">Login</a>
-          </div>
-        )}
-      </nav>
 
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-6 py-12">
