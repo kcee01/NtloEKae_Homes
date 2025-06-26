@@ -68,7 +68,7 @@ export default function ListingDetailsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex justify-center items-start pt-10 px-4">
+    <div className="min-h-screen bg-gray-50 flex justify-center items-start pt-10 px-4">
       <div className="w-full max-w-4xl bg-white shadow-lg rounded-xl p-6 border border-gray-200">
         {/* Title & Location */}
         <h2 className="text-3xl font-bold text-blue-700 mb-1">{listing.title}</h2>
