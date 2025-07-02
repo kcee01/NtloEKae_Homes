@@ -11,7 +11,8 @@ import ApplyPage from "./pages/ApplyPage";
 import ContactPage from "./pages/ContactPage";
 import LayoutWithNavbar from "./components/LayoutWithNavbar";
 import FloatingContactIcon from "./components/FloatingContactIcon";
-
+import AdminPage from "./pages/AdminPage";
+import TotalListings from "./components/Admin_Compo/TotalListings";
 function App() {
   return (
     <Router>
@@ -70,6 +71,14 @@ function App() {
             }
           />
           <Route
+            path="/Admin"
+            element={
+              <LayoutWithNavbar>
+                <AdminPage />
+              </LayoutWithNavbar>
+            }
+          />
+          <Route
             path="/my-listings"
             element={
               <LayoutWithNavbar>
@@ -77,6 +86,14 @@ function App() {
               </LayoutWithNavbar>
             }
           />
+          <Route
+            path="/admin/TotalListings"
+            element={
+              <LayoutWithNavbar>
+                <TotalListings />
+              </LayoutWithNavbar>
+            }
+          />    
           <Route
             path="/contact"
             element={<ContactPage />} // Note lowercase path

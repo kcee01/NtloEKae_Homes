@@ -68,6 +68,7 @@ export default function AuthForm({ onSubmit, type }) {
             onChange={handleChange}
             className="w-full mb-3 px-4 py-2 border rounded"
           >
+            <option value="admin">Administrator</option>
             <option value="tenant">Tenant</option>
             <option value="landlord">Landlord</option>
           </select>
